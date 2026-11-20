@@ -38,4 +38,25 @@ delete from tbl_member;
 SET GLOBAL auto_increment_increment = 3;
 
 
-select * from tbl_member where memId = 'gildong';
+select
+	*
+from
+	tbl_member
+where
+	memId = 'gildong';
+
+
+create table tbl_diary(
+	diaryNO			int 			auto_increment,
+	diaryWord		varchar(100) not null,
+	memId			varchar(20)	unique not null,
+	diaryRegDate	timestamp default current_timestamp,
+	diaryModDate	timestamp default current_timestamp on update current_timestamp,
+ 	primary key(diaryNO)
+) auto_increment = 10001;
+
+show tables;
+desc tbl_diary;
+select * from tbl_diary;
+
+
